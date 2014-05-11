@@ -24,9 +24,9 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:svn:http://karmaware.mine.nu/svn/kw/maven-plugins/maven-plugin-parent</connection>
-		<developerConnection></developerConnection>
-		<url></url>
+		<connection>scm:svn:http://karmaware.mine.nu/svn/kw/maven-plugins/maven-plugins-parent/trunk</connection>
+		<developerConnection>scm:svn:http://karmaware.mine.nu/svn/kw/maven-plugins/maven-plugins-parent/trunk</developerConnection>
+		<url>http://karmaware.mine.nu/svn/kw/maven-plugins/maven-plugins-parent/trunk</url>
 	</scm>
 
 	<developers>
@@ -45,5 +45,9 @@
 			<id>custom-plugins-repo</id>
 			<url>http://karma-server/nexus/content/repositories/plugins/</url>
 		</repository>
+		<snapshotRepository>
+			<id>custom-plugins-snapshots-repo</id>
+			<url>http://karma-server/nexus/content/repositories/plugins/</url>
+		</snapshotRepository>
 	</distributionManagement>
 </project>
