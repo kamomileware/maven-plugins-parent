@@ -47,7 +47,7 @@
 		</repository>
 		<snapshotRepository>
 			<id>custom-plugins-snapshots-repo</id>
-			<url>http://karma-server/nexus/content/repositories/plugins/</url>
+			<url>http://karma-server/nexus/content/repositories/plugins-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
