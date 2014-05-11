@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.kamomileware.maven.plugin</groupId>
+	<artifactId>maven-plugins-parent</artifactId>
+	<version>1</version>
+	<packaging>pom</packaging>
+
+	<name>Maven Plugins Parent</name>
+	<description>Base configuration for Maven plugins projects</description>
+	<inceptionYear>2009</inceptionYear>
+	<organization>
+		<name>KamomileWare</name>
+		<url>http://www.kamomileware.com</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>GNU LESSER GENERAL PUBLIC LICENSE 2.1</name>
+			<url>http://www.gnu.org/licenses/lgpl-2.1.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:svn:http://karmaware.mine.nu/svn/kw/maven-plugins/maven-plugin-parent</connection>
+		<developerConnection></developerConnection>
+		<url></url>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>jagarcia</id>
+			<name>José Á. García</name>
+			<email>iigarsan@gmail.com</email>
+			<timezone>+1</timezone>
+			<organization>KamomileWare</organization>
+		</developer>
+	</developers>
+
+	<distributionManagement>
+		<!-- TODO: move to public server -->
+		<repository>
+			<id>custom-plugins-repo</id>
+			<url>http://karma-server/nexus/content/repositories/plugins/</url>
+		</repository>
+	</distributionManagement>
+</project>
