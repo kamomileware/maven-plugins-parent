@@ -1,56 +1,56 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.kamomileware.maven.plugin</groupId>
-	<artifactId>maven-plugins-parent</artifactId>
-	<version>2-SNAPSHOT</version>
-	<packaging>pom</packaging>
+  <groupId>com.kamomileware.maven.plugin</groupId>
+  <artifactId>maven-plugins-parent</artifactId>
+  <version>2-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-	<name>KamomileWare Maven Plugins Parent</name>
-	<description>KamomileWare Base configuration for Maven plugins projects</description>
-	<inceptionYear>2009</inceptionYear>
+  <name>KamomileWare Maven Plugins Parent</name>
+  <description>KamomileWare Base configuration for Maven plugins projects</description>
+  <inceptionYear>2009</inceptionYear>
 
-	<organization>
-		<name>KamomileWare</name>
-		<url>http://www.kamomileware.com</url>
-	</organization>
+  <organization>
+    <name>KamomileWare</name>
+    <url>http://www.kamomileware.com</url>
+  </organization>
 
-	<licenses>
-		<license>
-			<name>GNU LESSER GENERAL PUBLIC LICENSE 2.1</name>
-			<url>http://www.gnu.org/licenses/lgpl-2.1.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
+  <licenses>
+    <license>
+      <name>GNU LESSER GENERAL PUBLIC LICENSE 2.1</name>
+      <url>http://www.gnu.org/licenses/lgpl-2.1.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
-	<scm>
-		<connection>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</connection>
-		<developerConnection>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</developerConnection>
-		<url>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</url>
-	</scm>
+  <scm>
+    <connection>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</connection>
+    <developerConnection>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</developerConnection>
+    <url>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</url>
+  </scm>
 
-	<developers>
-		<developer>
-			<id>jagarcia</id>
-			<name>José Á. García</name>
-			<email>iigarsan(at)gmail.com</email>
-			<timezone>+1</timezone>
-			<organization>KamomileWare</organization>
-		</developer>
-	</developers>
+  <developers>
+    <developer>
+      <id>jagarcia</id>
+      <name>José Á. García</name>
+      <email>iigarsan(at)gmail.com</email>
+      <timezone>+1</timezone>
+      <organization>KamomileWare</organization>
+    </developer>
+  </developers>
 
-	<distributionManagement>
-		<!-- TODO: move to public server -->
-		<repository>
-			<id>custom-plugins-repo</id>
-			<url>http://karma-server/nexus/content/repositories/plugins/</url>
-		</repository>
-		<snapshotRepository>
-			<id>custom-plugins-snapshots-repo</id>
-			<url>http://karma-server/nexus/content/repositories/plugins-snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
+  <distributionManagement>
+    <!-- TODO: move to public server -->
+    <repository>
+      <id>custom-plugins-repo</id>
+      <url>http://karma-server/nexus/content/repositories/plugins/</url>
+    </repository>
+    <snapshotRepository>
+      <id>custom-plugins-snapshots-repo</id>
+      <url>http://karma-server/nexus/content/repositories/plugins-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <properties>
     <encodingConfig>utf-8</encodingConfig>
