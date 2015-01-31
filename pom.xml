@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.kamomileware.maven.plugin</groupId>
   <artifactId>maven-plugins-parent</artifactId>
-  <version>2-SNAPSHOT</version>
+  <version>2</version>
   <packaging>pom</packaging>
 
   <name>KamomileWare Maven Plugins Parent</name>
@@ -28,6 +27,7 @@
     <connection>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</connection>
     <developerConnection>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</developerConnection>
     <url>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</url>
+    <tag>maven-plugins-parent-2</tag>
   </scm>
 
   <developers>
