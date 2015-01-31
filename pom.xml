@@ -4,12 +4,13 @@
 
 	<groupId>com.kamomileware.maven.plugin</groupId>
 	<artifactId>maven-plugins-parent</artifactId>
-	<version>1</version>
+	<version>2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Maven Plugins Parent</name>
-	<description>Base configuration for Maven plugins projects</description>
+	<name>KamomileWare Maven Plugins Parent</name>
+	<description>KamomileWare Base configuration for Maven plugins projects</description>
 	<inceptionYear>2009</inceptionYear>
+
 	<organization>
 		<name>KamomileWare</name>
 		<url>http://www.kamomileware.com</url>
@@ -24,9 +25,9 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:svn:http://karmaware.mine.nu/svn/kw/maven-plugins/maven-plugins-parent/trunk</connection>
-		<developerConnection>scm:svn:http://karmaware.mine.nu/svn/kw/maven-plugins/maven-plugins-parent/trunk</developerConnection>
-		<url>http://karmaware.mine.nu/svn/kw/maven-plugins/maven-plugins-parent/trunk</url>
+		<connection>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</connection>
+		<developerConnection>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</developerConnection>
+		<url>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</url>
 	</scm>
 
 	<developers>
@@ -50,4 +51,69 @@
 			<url>http://karma-server/nexus/content/repositories/plugins-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
+
+  <properties>
+    <encodingConfig>utf-8</encodingConfig>
+    <project.build.sourceEncoding>${encodingConfig}</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>${encodingConfig}</project.reporting.outputEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>2.6</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-plugin-plugin</artifactId>
+          <version>3.4</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.8</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-plugin-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.4</version>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
