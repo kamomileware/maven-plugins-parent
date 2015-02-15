@@ -6,10 +6,11 @@
   <packaging>pom</packaging>
   <name>KamomileWare Maven Plugins Parent</name>
   <description>KamomileWare Base configuration for Maven plugins projects</description>
+  <url>https://github.com/kamomileware/maven-plugins-parent</url>
   <inceptionYear>2009</inceptionYear>
   <organization>
     <name>KamomileWare</name>
-    <url>http://www.kamomileware.com</url>
+    <url>https://github.com/kamomileware</url>
   </organization>
   <licenses>
     <license>
