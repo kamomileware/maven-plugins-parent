@@ -70,6 +70,13 @@
       </plugin>
       <plugin>
         <artifactId>maven-plugin-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>help-goal</id>
+            <phase>none</phase>
+            <inherited>false</inherited>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
     <pluginManagement>
