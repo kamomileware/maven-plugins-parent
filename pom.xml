@@ -46,7 +46,7 @@
     </snapshotRepository>
     <site>
       <id>kamomileware.git.server</id>
-      <url>gitsite:git@kw.github.com/kamomileware/${project.artifactId}</url>
+      <url>gitsite:git@kw.github.com/kamomileware/${project.artifactId}.git</url>
     </site>
   </distributionManagement>
   <prerequisites>
