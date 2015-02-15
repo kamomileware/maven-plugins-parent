@@ -233,7 +233,7 @@
             <configuration>
               <serverId>oss.sonatype.org</serverId>
               <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <description>${project.version}</description>
+              <stagingDescription>${project.version}</stagingDescription>
             </configuration>
             <executions>
               <execution>
