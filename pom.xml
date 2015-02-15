@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.kamomileware.maven.plugin</groupId>
   <artifactId>maven-plugins-parent</artifactId>
-  <version>3-SNAPSHOT</version>
+  <version>3</version>
   <packaging>pom</packaging>
   <name>KamomileWare Maven Plugins Parent</name>
   <description>KamomileWare Base configuration for Maven plugins projects</description>
@@ -22,7 +22,7 @@
     <connection>scm:git:github.com:kamomileware/maven-plugins-parent.git</connection>
     <developerConnection>scm:git:kw.github.com:kamomileware/maven-plugins-parent.git</developerConnection>
     <url>https://github.com/kamomileware/maven-plugins-parent</url>
-    <tag>HEAD</tag>
+    <tag>v.3</tag>
   </scm>
   <developers>
     <developer>
