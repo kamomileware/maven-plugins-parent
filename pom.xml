@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.kamomileware.maven.plugin</groupId>
   <artifactId>maven-plugins-parent</artifactId>
-  <version>4-SNAPSHOT</version>
+  <version>3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>KamomileWare Maven Plugins Parent</name>
   <description>KamomileWare Base configuration for Maven plugins projects</description>
