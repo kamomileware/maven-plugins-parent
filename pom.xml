@@ -1,20 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.kamomileware.maven.plugin</groupId>
   <artifactId>maven-plugins-parent</artifactId>
   <version>3-SNAPSHOT</version>
   <packaging>pom</packaging>
-
   <name>KamomileWare Maven Plugins Parent</name>
   <description>KamomileWare Base configuration for Maven plugins projects</description>
   <inceptionYear>2009</inceptionYear>
-
   <organization>
     <name>KamomileWare</name>
     <url>http://www.kamomileware.com</url>
   </organization>
-
   <licenses>
     <license>
       <name>GNU LESSER GENERAL PUBLIC LICENSE 2.1</name>
@@ -22,14 +18,12 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
   <scm>
-    <connection>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</connection>
-    <developerConnection>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</developerConnection>
-    <url>scm:git:git@github.com:kamomileware/maven-plugins-parent.git</url>
+    <connection>scm:git:github.com:kamomileware/maven-plugins-parent.git</connection>
+    <developerConnection>scm:git:github.com:kamomileware/maven-plugins-parent.git</developerConnection>
+    <url>https://github.com/kamomileware/maven-plugins-parent</url>
     <tag>HEAD</tag>
   </scm>
-
   <developers>
     <developer>
       <id>jagarcia</id>
@@ -39,52 +33,67 @@
       <organization>KamomileWare</organization>
     </developer>
   </developers>
-
   <distributionManagement>
-    <!-- TODO: move to public server -->
+    <downloadUrl>https://oss.sonatype.org/content/groups/public</downloadUrl>
     <repository>
-      <id>custom-plugins-repo</id>
-      <url>http://karma-server/nexus/content/repositories/plugins/</url>
+      <id>oss.sonatype.org</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
     </repository>
     <snapshotRepository>
-      <id>custom-plugins-snapshots-repo</id>
-      <url>http://karma-server/nexus/content/repositories/plugins-snapshots/</url>
+      <id>oss.sonatype.org</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
+    <site>
+      <id>kamomileware.git.server</id>
+      <url>gitsite:git@github.com-kamomileware/kamomileware/${project.artifactId}.git</url>
+    </site>
   </distributionManagement>
-
   <properties>
     <encodingConfig>utf-8</encodingConfig>
     <project.build.sourceEncoding>${encodingConfig}</project.build.sourceEncoding>
     <project.reporting.outputEncoding>${encodingConfig}</project.reporting.outputEncoding>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
   </properties>
-
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-plugin-plugin</artifactId>
       </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>2.6</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.1</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-plugin-plugin</artifactId>
           <version>3.4</version>
+          <configuration>
+            <extractors>
+              <extractor>java-annotations</extractor>
+            </extractors>
+          </configuration>
+          <executions>
+            <execution>
+              <id>help-goal</id>
+              <goals>
+                <goal>helpmojo</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
@@ -92,28 +101,158 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-scm</artifactId>
+        <version>2.8</version>
+      </extension>
+      <extension>
+        <groupId>org.apache.maven.scm</groupId>
+        <artifactId>maven-scm-manager-plexus</artifactId>
+        <version>1.9.2</version>
+      </extension>
+      <extension>
+        <groupId>com.github.stephenc.wagon</groupId>
+        <artifactId>wagon-gitsite</artifactId>
+        <version>0.5</version>
+      </extension>
+    </extensions>
   </build>
   <reporting>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.8</version>
+        <version>2.7</version>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.9</version>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-plugin-plugin</artifactId>
+        <version>3.4</version>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <version>3.4</version>
       </plugin>
     </plugins>
   </reporting>
+  <profiles>
+    <profile>
+      <id>private-repositories</id>
+      <distributionManagement>
+        <repository>
+          <id>custom-plugins-repo</id>
+          <url>http://karma-server/nexus/content/repositories/plugins/</url>
+        </repository>
+        <snapshotRepository>
+          <id>custom-plugins-snapshots-repo</id>
+          <url>http://karma-server/nexus/content/repositories/plugins-snapshots/</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+    <profile>
+      <!--
+      The profile deploys all artifacts to oss.sonatype.org
+      repository (if you're registered there). It also skips
+      default deployment plugin.
+      @see http://www.jcabi.com/jcabi-parent/profile-sonatype.html
+      -->
+      <id>sonatype</id>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <artifactId>maven-deploy-plugin</artifactId>
+              <configuration>
+                <skip>true</skip>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+        <plugins>
+          <plugin>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>gen-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>gen-javadoc</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <!-- @see http://www.sonatype.com/books/nexus-book/reference/staging-sect-deployment.html -->
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.5</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>oss.sonatype.org</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <description>${project.version}</description>
+            </configuration>
+            <executions>
+              <execution>
+                <id>deploy-to-sonatype</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>deploy</goal>
+                  <goal>release</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <!--
+      Sign artifacts before installation with GPG. To enable
+      this profile you should have "gpg.keyname" property defined.
+      -->
+      <id>gpg-sign</id>
+      <activation>
+        <property>
+          <name>gpg.keyname</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <!--
+            To GPG-sign the artifact before deployment to foreign
+            repository. GPG keys have to be provided in CI
+            environment, and published beforehand.
+            @link http://www.sonatype.com/people/2010/01/how-to-generate-pgp-signatures-with-maven/
+            -->
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
