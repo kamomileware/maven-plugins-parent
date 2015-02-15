@@ -19,12 +19,6 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-  <scm>
-    <connection>scm:git:github.com:kamomileware/maven-plugins-parent.git</connection>
-    <developerConnection>scm:git:kw.github.com:kamomileware/maven-plugins-parent.git</developerConnection>
-    <url>https://github.com/kamomileware/maven-plugins-parent</url>
-    <tag>develop</tag>
-  </scm>
   <developers>
     <developer>
       <id>jagarcia</id>
@@ -34,6 +28,12 @@
       <organization>KamomileWare</organization>
     </developer>
   </developers>
+  <scm>
+    <connection>scm:git:github.com:kamomileware/maven-plugins-parent.git</connection>
+    <developerConnection>scm:git:kw.github.com:kamomileware/maven-plugins-parent.git</developerConnection>
+    <url>https://github.com/kamomileware/${project.artifactId}</url>
+    <tag>develop</tag>
+  </scm>
   <distributionManagement>
     <downloadUrl>https://oss.sonatype.org/content/groups/public</downloadUrl>
     <repository>
@@ -46,7 +46,7 @@
     </snapshotRepository>
     <site>
       <id>kamomileware.git.server</id>
-      <url>gitsite:git@kw.github.com/kamomileware/${project.artifactId}.git</url>
+      <url>gitsite:git@kw.github.com/kamomileware/${project.artifactId}</url>
     </site>
   </distributionManagement>
   <prerequisites>
