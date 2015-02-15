@@ -20,7 +20,7 @@
   </licenses>
   <scm>
     <connection>scm:git:github.com:kamomileware/maven-plugins-parent.git</connection>
-    <developerConnection>scm:git:github.com:kamomileware/maven-plugins-parent.git</developerConnection>
+    <developerConnection>scm:git:kw.github.com:kamomileware/maven-plugins-parent.git</developerConnection>
     <url>https://github.com/kamomileware/maven-plugins-parent</url>
     <tag>HEAD</tag>
   </scm>
